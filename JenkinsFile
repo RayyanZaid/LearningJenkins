@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Build') {
+            steps {
+                sh 'python --version' // Runs the 'python --version' command
+            }
+        }
+        
+        stage('Test') {
+            steps {
+                sh 'python main.py' // Runs your Python test script
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                sh 'python main.py' // Runs your Python deploy script
+            }
+        }
+    }
+}
